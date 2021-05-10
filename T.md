@@ -69,19 +69,33 @@ Common Server (CSR1) 通用服务器
 Dell R610 Server
 HP DL360 G7 Server 
 
-Common Server (CSR2) 通用服务器
-R620 
-HP DL360p G8
+两大部分：
+CDom (Console Domain)   IP 
+Dom0 (System Domain)  IP
 
-Common Server (CSR3) 通用服务器
-R630 
-HP DL360p G9
+在Dom0的hosts文件中 cdom.vsp指向cdom的IP
+在CDom的hosts文件中 dom0.vsp指向dom0的IP
 
-Common Server (CSR4) 通用服务器
-R640   ASP ACP 110 120 130 
+https://downloads.avaya.com/css/P8/documents/100089133
 
 
+SSH IP
+admin  既可以登录CLI, 又可以登录Web
+root 只能登录CLI
 
+Web Access : Https://CDom-IP
+
+WebLM : Web License Manager
+
+===============================
+
+CM Duplex     2 HA
+CM Simplex 
+
+======================
+
+
+SAL Secure access link
 
 Maintenance
 
