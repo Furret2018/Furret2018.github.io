@@ -7,7 +7,9 @@ Part 1
 Dalian BBE
 	Avaya Products & Solutions
 
-# UC
+# 产品分类
+
+## UC
 协议
 H323 SIP
 
@@ -17,16 +19,31 @@ AAMS / Gateway G450 G650
 SM
 SMGR
 
-# CC
+## CC
 AES Application Enablement Service
 VP / AAEP 
 POM
 CMS call management service
 ACR / WFO
 
+-----------------------------------
 
-Solutions
-CM - AAMS/GW - Phone
+# 以CM为核的H323通信系统
+MCU - GW+ GK - Terminal
+
+Solutions： CM - AAMS/GW - Phone
+
+CM : R5.2.4
+R6
+R7 
+R8 
+
+AAMS 
+Gateway 
+
+Phone 96XX 16XX 46XX
+
+
 
 
 ================================================
@@ -62,7 +79,73 @@ PLDS   product license Delivery Service
 
 
 
-# Installation
+# CM Installation
+
+
+soft-only 
+
+OVA - Virtual Appliance
+VE (VMware ESXi) + OVA
+AVP + OVA
+
+## HW
+S8300E
+
+CSR2 
+CSR3
+
+ACP
+
+## SW
+VE/AVP + OVA
+
+
+SIMPLEX / Duplex 
+
+# CM的访问
+
+
+### Web
+License
+WebLM =  Web License Manager
+
+HA
+CLI 
+
+putty -> Linux  -> sat -> CM 
+Port 5022 -> CM
+
+
+ASA 
+
+MST 
+
+
+
+
+
+CA Certificate Authentication Authority
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Avaya System Platform       ASP  R6.3.4
 Common Server (CSR1) 通用服务器
