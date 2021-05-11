@@ -62,7 +62,7 @@ PLDS   product license Delivery Service
 
 
 
-Installation
+# Installation
 
 Avaya System Platform       ASP  R6.3.4
 Common Server (CSR1) 通用服务器
@@ -76,7 +76,7 @@ Dom0 (System Domain)  IP
 在Dom0的hosts文件中 cdom.vsp指向cdom的IP
 在CDom的hosts文件中 dom0.vsp指向dom0的IP
 
-https://downloads.avaya.com/css/P8/documents/100089133
+https://downloads.avaya.com/css/P8/documents/100089133    
 
 
 SSH IP
@@ -152,18 +152,18 @@ CSM : Client Service Manager 客户经理
 
 
 
-# Common Server
-Common Server (CSR1) 通用服务器
-Dell R610 Server
-HP DL360 G7 Server 
+# Common Server     
+Common Server (CSR1) 通用服务器     
+- Dell R610 Server    
+- HP DL360 G7 Server     
 
-Common Server (CSR2) 通用服务器
-R620 
-HP DL360p G8
+Common Server (CSR2) 通用服务器    
+- R620 
+- HP DL360p G8
 
-Common Server (CSR3) 通用服务器
-R630 
-HP DL360p G9
+Common Server (CSR3) 通用服务器   
+- R630 
+- HP DL360p G9
 
-Common Server (CSR4) 通用服务器
-R640   ASP ACP 110 120 130 
+Common Server (CSR4) 通用服务器    
+- R640   ASP ACP 110 120 130 
