@@ -1,6 +1,7 @@
 /* main.css 
   Page structure:
-  body
+  body page
+  banner, main, foot
 */
 body{
   padding: 0;
