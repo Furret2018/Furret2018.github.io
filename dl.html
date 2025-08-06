@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Jack's Home page</title>
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <script type="text/javascript" src="./js/main.js"></script>
+
+    <style>
+        #content>ul {
+            padding: 0;
+            margin: 0;
+
+            width: 50%;
+        }
+
+        #content>ul>li {
+            margin: 5px 0;
+            list-style-type: none;
+            text-decoration: none;
+            color: black;
+
+            height: 30px;
+            line-height: 30px;
+
+            font-size: 24px;
+        }
+
+        #content>ul>li>a {
+            color: black;
+            text-decoration: none;
+        }
+
+        #content>ul>li:hover {
+            color: red;
+            background-color: yellow;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="page">
+        <div id="banner">
+            <h1> Welcome to Home</h1>
+        </div>
+
+        <div id="main">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Homepage</a></li>
+                    <li><a href="dl.html">下书网站</a></li>
+                    <li><a href="http://mdlk.ysepan.com/">mdlk</a></li>
+                    <li><a href="https://www.github.com" target="_blank" rel="noopener noreferrer">Github</a></li>
+                </ul>
+            </nav>
+            <div id="content">
+                <ul>
+                    <li><a href="https://epage.pub/search/Japanese">epage</a></li>
+                    <li><a href="http://www.de56.com/">盘搜联盟 de56</a></li>
+                    <li><a href="https://thelib.net">thelib</a></li>
+                    <li><a href="https://www.cr173.com/">西西下载站</a></li>
+                    <li><a href="https://oceanofpdf.com/">oceanofpdf</a></li>
+                    <li><a href="https://www.pdfdrive.com">pdfdrive</a></li>
+                    <li><a href="http://pdfcoffee.com">pdfcoffee</a></li>
+                    <li><a href="https://epdf.pub/en/">epub</a></li>
+
+                    <li><a href="https://www.zhihu.com">知乎</a></li>
+                    <li><a href="https://www.bilibili.com">哔哩哔哩</a></li>
+                    <li><a href="https://www.weibo.com">微博</a></li>
+
+                    <li><a href="https://www.jianshu.com">简书</a></li>
+                    <li><a href="https://www.wenku8.net">文库</a></li>
+                    <li><a href="https://www.ximalaya.com">喜马拉雅</a></li>
+                    <li><a href="https://www.ixigua.com">西瓜视频</a></li>
+                    <li><a href="https://www.toutiao.com">今日头条</a></li>
+                    <li><a href="https://www.douban.com">豆瓣</a></li>
+                    <li><a href="https://www.360kan.com">360影视</a></li>
+                    <li><a href="https://www.youku.com">优酷</a></li>
+                    <li><a href="https://www.dushu.com">读书网</a></li>
+                    <li><a href="https://www.qidian.com">起点中文网</a></li>
+                    <li><a href="https://www.ireadweek.com">爱阅网</a></li>
+                    <li><a href="https://www.zuowen.com">作文网</a></li>
+                    <li><a href="https://www.zongheng.com">纵横中文网</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div id="foot">
+            @copyleft 2025/08/05
+        </div>
+    </div>
+
+
+    <script>
+        navlinks = document.querySelectorAll('nav ul li');
+        navlinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+                window.location.href = link.firstElementChild.href;
+            });
+        });
+    </script>
+</body>
+
+</html>
