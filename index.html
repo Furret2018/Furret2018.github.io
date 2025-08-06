@@ -12,13 +12,24 @@
 
 
 <body>
-    <div id="whole">
+    <div id="page">
         <div id="banner">
             <h1> Welcome to Home</h1>
-            <button onclick="changeColor()">Change Background Color</button>
         </div>
 
         <div id="main">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Homepage</a></li>
+                    <li><a href="dl.html">下书网站</a></li>
+                    <li><a href="http://mdlk.ysepan.com/">mdlk</a></li>
+                    <li><a href="https://www.github.com" target="_blank" rel="noopener noreferrer">Github</a></li>
+                </ul>
+            </nav>
+            <div id="content">
+                <h2>My Blog</h2>
+                <p>My first blog</p>
+            </div>
         </div>
 
 
@@ -26,6 +37,16 @@
             @copyleft 2025/08/05
         </div>
     </div>
+
+
+    <script>
+        navlinks = document.querySelectorAll('nav ul li');
+        navlinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+                window.location.href = link.firstElementChild.href;
+            });
+        });
+    </script>
 </body>
 
 </html>
