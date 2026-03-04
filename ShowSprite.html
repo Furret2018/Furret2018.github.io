@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/4399shoubiao.js"></script>
+    <title> 4399 超级精灵手表 </title>
+</head>
+
+<body>
+
+    <script>
+        // 1. 初始化舞台
+        Laya.init(1280, 720, Laya.WebGL);
+
+        Laya.stage.scaleMode = Laya.Stage.SCALE_SHOWALL;
+        Laya.stage.alignV = Laya.Stage.ALIGN_MIDDLE;
+        Laya.stage.alignH = Laya.Stage.ALIGN_CENTER;
+        Laya.stage.bgColor = "#608080";
+
+        // 2. 定义.sk资源路径
+        const SK_RES = {
+            sk: "./sprite/tika02.sk",    // 转换后的骨骼文件    
+            png: "/sprite/tika02.png"   // 对应纹理图（可选，Laya会自动加载，但显式加载更稳定）
+        };
+
+        // 3. 加载.sk资源
+        Laya.loader.load([
+            { url: SK_RES.sk, type: Laya.Loader.BUFFER },  // .sk文件用BUFFER类型加载    
+            { url: SK_RES.png, type: Laya.Loader.IMAGE }],
+            Laya.Handler.create(this, onLoadComplete));
+
+        // 4. 资源加载完成：创建并控制Skeleton动画
+        function onLoadComplete() {
+            // ① 创建Skeleton对象   
+            const skeleton = new Laya.Skeleton();
+            // ② 加载.sk文件    
+            skeleton.load(SK_RES.sk);
+
+            // ③ 基础属性设置               
+            skeleton.x = Laya.stage.width / 2;      // 位置居中           
+            skeleton.y = Laya.stage.height / 2;
+            skeleton.scale(0.6, 0.6);               // 缩放   
+
+            skeleton.pivotX = skeleton.width / 2;   // 轴心点居中                
+            skeleton.pivotY = skeleton.height / 2;
+            // ④ 添加到舞台    
+            Laya.stage.addChild(skeleton);
+
+            // ⑤ 核心动画控制（重点）    
+            // 播放指定动画（参数1：动画名，参数2：是否循环，参数3：播放速度）          
+            // for (var i = 0; i < skeleton.getAnimNum(); i++) {
+            //     console.log(skeleton.getAniNameByIndex(i));
+            // }
+            // skeleton.play("skill", true, 1);
+            // skeleton.play("attack", true, 1);
+            // skeleton.play("hurt", true, 1);
+            // skeleton.play("idle", true, 1);
+            skeleton.play("move", false, 1);
+            skeleton.stop();
+            // 播放walk动画，循环，速度1        
+            // ⑥ 常用控制方法演示（可按需调用）    
+            // 示例1：2秒后切换为攻击动画（单次播放）    
+            // Laya.timer.once(2000, this, () => {
+            //     skeleton.play("goat_trot_anim", false);     // attack动画，不循环    
+            // });
+
+            // 示例2：攻击动画播放完成后，切换为待机动画    
+            // skeleton.on(Laya.Event.COMPLETE, this, () => {
+            //     console.log("当前动画播放完成");
+            //     if (skeleton.currentAnimation === "goat_trot_anim") {
+            //         skeleton.play("goat_idle_anim", true);             // 切换为idle待机动画    
+            //         console.log("goat_idle_anim");
+            //     }
+            // });
+
+            // 示例3：手动控制暂停/继续（可绑定按钮点击）    
+            // 暂停动画    
+            // skeleton.stop();    
+            // 继续播放当前动画    
+            // skeleton.play();        
+            // 示例4：调整动画播放速度    
+            // skeleton.speed = 0.5;
+            // 慢放（0.5倍速）    
+            // skeleton.speed = 2;   
+            // 快放（2倍速）        
+            // 示例5：跳转到动画指定帧    
+            // skeleton.gotoAndPlay("walk", 10); 
+            // 从walk动画的第10帧开始播放        
+            // 示例6：隐藏/显示动画    
+            // skeleton.visible = false;        
+            // 示例7：释放资源（不用时调用）    
+            // skeleton.destroy();
+        }
+    </script>
+</body>
+
+</html>
