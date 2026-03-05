@@ -17,24 +17,35 @@
         Laya.stage.scaleMode = Laya.Stage.SCALE_SHOWALL;
         Laya.stage.alignV = Laya.Stage.ALIGN_MIDDLE;
         Laya.stage.alignH = Laya.Stage.ALIGN_CENTER;
-        Laya.stage.bgColor = "#608080";
+        Laya.stage.bgColor = "#6495ED";
+
+        const tika = "sprite/tika.sk",
+            chaotika = "sprite/chaotika02.sk",
+            shenshengtika = "sprite/shenshengtika02.sk";
 
         // 2. 定义.sk资源路径
         const SK_RES = {
-            sk: "sprite/chaotika02.sk",    // 转换后的骨骼文件    
-            png: "sprite/chaotika02.png"   // 对应纹理图（可选，Laya会自动加载，但显式加载更稳定）
+            sk: "sprite/tika.sk",    // 转换后的骨骼文件    
+            png: "sprite/tika.png"   // 对应纹理图（可选，Laya会自动加载，但显式加载更稳定）
         };
 
         // 3. 加载.sk资源
         Laya.loader.load([
             { url: SK_RES.sk, type: Laya.Loader.BUFFER },  // .sk文件用BUFFER类型加载    
-            { url: SK_RES.png, type: Laya.Loader.IMAGE }],
+            { url: SK_RES.png, type: Laya.Loader.IMAGE },
+            { url: "sprite/chaotika02.sk", type: Laya.Loader.BUFFER },
+            { url: "sprite/chaotika02.png", type: Laya.Loader.IMAGE },
+            { url: "sprite/shenshengtika02.sk", type: Laya.Loader.BUFFER },
+            { url: "sprite/shenshengtika02.png", type: Laya.Loader.IMAGE }
+        ],
             Laya.Handler.create(this, onLoadComplete));
 
+        // ① 创建Skeleton对象
+        const skeleton = new Laya.Skeleton();        
+
         // 4. 资源加载完成：创建并控制Skeleton动画
-        function onLoadComplete() {
-            // ① 创建Skeleton对象   
-            const skeleton = new Laya.Skeleton();
+        function onLoadComplete() {          
+            
             // ② 加载.sk文件    
             skeleton.load(SK_RES.sk);
 
@@ -93,6 +104,20 @@
             // 示例7：释放资源（不用时调用）    
             // skeleton.destroy();
         }
+
+        // 单击将在缇卡三种状态间循环
+        let i = 0;
+        window.addEventListener("click", () => {
+            if (i % 3 == 0) {
+                skeleton.load(tika);
+            } else if (i % 3 == 1) {
+                skeleton.load(chaotika);
+            } else {
+                skeleton.load(shenshengtika);
+            }
+            i++;
+            console.log(i);
+        });
     </script>
 </body>
 
